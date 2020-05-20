@@ -1,14 +1,14 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script src="https://threejs.org/build/three.js"></script>
     <script>
       // ページの読み込みを待つ
       window.addEventListener('load', init);
 
       function init() {
         // サイズを指定
-        const width = 960;
+        const width = 1000;
         const height = 700;
 
         // レンダラーを作成
@@ -24,9 +24,10 @@
 
         // フォグを設定
         scene.fog = new THREE.Fog(0x000000, 50, 2000);
-
+        var near = 0.1;
+        var far = 1500;
         // カメラを作成
-        const camera = new THREE.PerspectiveCamera(45, width / height);
+        const camera = new THREE.PerspectiveCamera(45, width / height,near,far);
         camera.position.set(0, 0, +1000);
 
         // グループを作成
@@ -50,8 +51,8 @@
         }
 
         // 光源
-        scene.add(new THREE.DirectionalLight(0xff0000, 2)); // 平行光源
-        scene.add(new THREE.AmbientLight(0x00ffff)); // 環境光源
+        //scene.add(new THREE.DirectionalLight(0xff0000, 2)); // 平行光源
+        //scene.add(new THREE.AmbientLight(0x00ffff)); // 環境光源
 
         // 毎フレーム時に実行されるループイベントです
         tick();
