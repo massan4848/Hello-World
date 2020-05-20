@@ -33,9 +33,9 @@
         const group = new THREE.Group();
         scene.add(group);
         const geometry = new THREE.BoxBufferGeometry(50, 50, 50);
-        const material = new THREE.MeshStandardMaterial();
+        //const material = new THREE.MeshStandardMaterial();
         //const material = new THREE.MeshBasicMaterial();
-        //const material = new THREE.MeshNormalMaterial();
+        const material = new THREE.MeshNormalMaterial();
 
         for (let i = 0; i < 1000; i++) {
           const mesh = new THREE.Mesh(geometry, material);
